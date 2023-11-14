@@ -1,0 +1,49 @@
+<div class="main-container">
+  <!-- <div class="alert alert-app-level">...</div> -->
+  <header class="header-6">
+    <div class="branding">
+      <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active"  class="nav-link">
+        <clr-icon shape="users"></clr-icon>
+        <span class="title">ระบบบริหารแผนและงบประมาณแบบบูรณาการ</span>
+      </a>
+    </div>
+    <div class="header-actions">
+      <!-- <a href="..." class="nav-link nav-text">Log Out</a> -->
+    </div>
+  </header>
+  <!-- <nav class="subnav">...</nav> -->
+  <div class="content-container">
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+    <clr-vertical-nav [clrVerticalNavCollapsible]="demoCollapsible">
+      <clr-vertical-nav-group routerLinkActive="active">
+        <clr-icon shape="user" clrVerticalNavIcon></clr-icon>
+        ระบบแผน
+        <clr-vertical-nav-group-children>
+          <a clrVerticalNavLink routerLink="./plan/objects" routerLinkActive="active">รหัสพัสดุ</a>
+          <a clrVerticalNavLink routerLink="./plan/projects" routerLinkActive="active">แผนโครงการ</a>
+        </clr-vertical-nav-group-children>
+      </clr-vertical-nav-group>
+      <clr-vertical-nav-group routerLinkActive="active">
+        <clr-icon shape="flame" clrVerticalNavIcon></clr-icon>
+        ระบบจัดซื้อ
+        <clr-vertical-nav-group-children>
+          <a clrVerticalNavLink routerLink="./purchase/orders" routerLinkActive="active">จัดซื้อ </a>
+        </clr-vertical-nav-group-children>
+      </clr-vertical-nav-group>
+      <clr-vertical-nav-group routerLinkActive="active">
+        <clr-icon shape="flame" clrVerticalNavIcon></clr-icon>
+        ระบบคลังพัสดุ
+        <clr-vertical-nav-group-children>
+          <a clrVerticalNavLink routerLink="./store/stockcard" routerLinkActive="active">สต๊อกการ์ด </a>
+        </clr-vertical-nav-group-children>
+      </clr-vertical-nav-group>
+
+      <a clrVerticalNavLink (click)="logout()">
+        <clr-icon shape="certificate" clrVerticalNavIcon></clr-icon>
+        ออกจากระบบ
+      </a>
+    </clr-vertical-nav>
+  </div>
+</div>
